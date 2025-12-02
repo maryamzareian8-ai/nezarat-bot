@@ -19,7 +19,7 @@ const bot = new TelegramBot(TOKEN, { polling: false });
 const app = express();
 app.use(express.json());
 
-app.post(/webhook, (req, res) => {
+app.post('/webhook', (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
@@ -43,3 +43,4 @@ app.listen(PORT, () => {
   bot.setWebHook(url);
   console.log("Webhook set to:", url);
 });
+
